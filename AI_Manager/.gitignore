@@ -1,0 +1,14 @@
+# Security: Hide API Keys
+.env
+
+# Python: Ignore temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database: Ignore local database
+db.sqlite3
+
+# Environment
+venv/
+env/
