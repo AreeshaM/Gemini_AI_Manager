@@ -1,0 +1,90 @@
+{% extends 'boards/base.html' %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h1 class="fw-bold text-dark mb-1">Innovation Hub</h1>
+            <p class="text-muted">Empowering your ideas with Gemini AI Intelligence</p>
+        </div>
+        <button type="button" class="btn btn-smart shadow-sm px-4" data-bs-toggle="modal" data-bs-target="#projectModal">
+            + Initiate New Project
+        </button>
+    </div>
+
+    <div class="row">
+        {% for item in projects_list %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="glass-card h-100 p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="badge rounded-pill bg-primary-subtle text-primary px-3 py-2 small">AI Optimized</span>
+                    <div class="text-end">
+                        <h6 class="text-primary fw-bold mb-0">{{ item.progress }}%</h6>
+                        <small class="text-muted">Completion</small>
+                    </div>
+                </div>
+                
+                <h4 class="fw-bold mb-2">{{ item.obj.name }}</h4>
+                <p class="text-secondary small mb-4" style="height: 40px; overflow: hidden;">{{ item.obj.description|truncatewords:12 }}</p>
+
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: {{ item.progress }}%;"></div>
+                </div>
+
+                <hr class="opacity-10">
+
+                <h6 class="fw-bold small text-uppercase tracking-wider mb-3">Actionable Roadmap:</h6>
+                <div class="list-group list-group-flush">
+                    {% for task in item.tasks %}
+                    <div class="d-flex align-items-center mb-2">
+                        <a href="{% url 'update_task' task.id %}" class="text-decoration-none me-3">
+                            {% if task.status == 'DONE' %}
+                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 24px; height: 24px;">✓</div>
+                            {% else %}
+                                <div class="border border-2 rounded-circle" style="width: 24px; height: 24px;"></div>
+                            {% endif %}
+                        </a>
+                        <a href="{% url 'task_detail' task.id %}" class="text-decoration-none text-dark flex-grow-1 {% if task.status == 'DONE' %}text-muted text-decoration-line-through{% endif %}">
+                            <span class="small fw-semibold">{{ task.title }}</span>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5 glass-card">
+            <h3 class="text-muted">No active projects found.</h3>
+            <p class="text-secondary">Start by clicking 'Initiate New Project' to see AI in action.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-card border-0 shadow-lg">
+            <div class="modal-header border-0 pt-4 px-4">
+                <h5 class="modal-title fw-bold">Design Your Vision</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body p-4">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-uppercase text-muted">Project Name</label>
+                        <input type="text" name="project_name" class="form-control form-control-lg bg-light border-0 shadow-none" placeholder="e.g. Smart Agriculture System" required style="border-radius: 12px;">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-uppercase text-muted">Impact Description</label>
+                        <textarea name="project_desc" class="form-control bg-light border-0 shadow-none" rows="4" placeholder="Describe the goal and how it helps the community..." required style="border-radius: 12px;"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pb-4 px-4">
+                    <button type="submit" class="btn btn-smart w-100 py-3 shadow-lg">Architect Roadmap with Gemini 2.0</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

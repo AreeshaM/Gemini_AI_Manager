@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Architect | Project Manager</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Scholarship Standard UI Variables */
+        :root {
+            --primary: #4f46e5;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --glass: rgba(255, 255, 255, 0.85);
+            --bg-gradient: radial-gradient(circle at top right, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: #1f2937;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Card Effect */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            letter-spacing: -0.5px;
+        }
+
+        /* Premium Buttons */
+        .btn-smart {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white !important;
+            border: none;
+            border-radius: 14px;
+            padding: 12px 28px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+            transition: 0.3s all ease;
+        }
+
+        .btn-smart:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Progress Bar Styling */
+        .progress {
+            height: 8px;
+            border-radius: 20px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'dashboard' %}">
+                <span class="me-2">✨</span> AI Architect
+            </a>
+            <div class="ms-auto">
+                <span class="badge bg-info-subtle text-info p-2 rounded-pill">SDG #9: Innovation</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="container text-center py-5 mt-5">
+        <p class="text-muted small">© 2026 AI Project Architect | Designed for Global Impact</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form submit hotay waqt loader dikhaye ga
+        document.addEventListener('submit', function(e) {
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span> Architecting with Gemini...`;
+                submitBtn.style.opacity = '0.8';
+            }
+        });
+    </script>
+</body>
+</html>

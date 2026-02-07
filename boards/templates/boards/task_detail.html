@@ -1,0 +1,51 @@
+{% extends 'boards/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <a href="{% url 'dashboard' %}" class="btn btn-link text-decoration-none text-muted mb-4 p-0">← Back to Innovation Hub</a>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="glass-card p-5 mb-4">
+                <div class="d-flex align-items-center mb-4">
+                    <span class="badge bg-primary me-2">Gemini 2.0 Flash</span>
+                    <span class="text-muted small">Smart Implementation Guide</span>
+                </div>
+                <h2 class="fw-bold mb-3">{{ task.title }}</h2>
+                <p class="text-secondary mb-5">{{ task.description }}</p>
+
+                <div class="bg-dark text-light p-4 rounded-4 shadow-sm" style="font-family: 'Consolas', monospace; font-size: 0.95rem;">
+                    <h6 class="text-info small mb-3">// AI Generated Solution:</h6>
+                    <div style="white-space: pre-wrap; line-height: 1.6; color: #d1d5db;">{{ solution }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="glass-card p-4">
+                <h5 class="fw-bold mb-4">💬 Collaboration</h5>
+                <form method="POST" class="mb-4">
+                    {% csrf_token %}
+                    <input type="text" name="author_name" class="form-control mb-2 border-0 bg-light p-2" placeholder="Your Name" required>
+                    <textarea name="comment_text" class="form-control mb-2 border-0 bg-light p-2" rows="3" placeholder="Share your thoughts..." required></textarea>
+                    <button type="submit" class="btn btn-smart w-100 py-2">Post Update</button>
+                </form>
+
+                <div style="max-height: 450px; overflow-y: auto;">
+                    {% for comment in comments %}
+                    <div class="p-3 bg-white rounded-3 mb-2 shadow-sm border-start border-4 border-primary">
+                        <div class="d-flex justify-content-between x-small">
+                            <span class="fw-bold text-primary">{{ comment.author_name }}</span>
+                            <span class="text-muted small">{{ comment.created_at|timesince }} ago</span>
+                        </div>
+                        <p class="small mb-0 mt-1 text-dark">{{ comment.text }}</p>
+                    </div>
+                    {% empty %}
+                    <p class="text-center text-muted py-4">No comments yet. Start the conversation!</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
