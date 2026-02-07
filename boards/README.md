@@ -1,42 +1,25 @@
-# ✨ AI Architect: Project Management Re-imagined
+# 🚀 AI Architect: Intelligent Project Roadmap Generator
 
-[![Gemini AI](https://img.shields.io/badge/AI-Gemini%202.0%20Flash-blueviolet)](https://ai.google.dev/)
-[![Django](https://img.shields.io/badge/Framework-Django%205.0-green)](https://www.djangoproject.com/)
-[![Scholarship](https://img.shields.io/badge/Purpose-US%20Scholarship%20Portfolio-gold)](#-social-impact--scholarship-vision)
+![SDG 9](https://img.shields.io/badge/SDG-9-blue?style=for-the-badge) ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) ![Gemini AI](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
 
-**AI Architect** is a modern, AI-powered project management tool designed to bridge the gap between "Idea" and "Action". Built with Python/Django and powered by Google Gemini 2.0, it automatically generates technical roadmaps and implementation guides for any project idea.
+**AI Architect** is a specialized project management tool developed during my internship at **HZ Software Solutions**. It leverages **Google Gemini 2.0 Flash** to bridge the gap between technical ideas and actionable roadmaps, providing instant implementation guides for users.
 
 ---
 
-## 🚀 Key Features
+## 🎯 Project Vision & Scholarship Goals
+This project directly addresses **UN Sustainable Development Goal #9: Industry, Innovation, and Infrastructure**. My vision for my future MS studies in the US is to empower global innovation by making AI-driven technical planning accessible to everyone, regardless of their background.
 
-* **Smart Roadmap Generation:** Instantly converts a project description into 5 actionable technical tasks using Gemini AI.
-* **Technical Implementation Guides:** Provides deep-dive solutions and code snippets for every generated task.
-* **Real-time Collaboration:** Integrated "Team Discussion" portal for stakeholders to communicate.
-* **Glassmorphism UI:** A premium, modern dashboard designed with high UX standards for professional use.
-* **Progress Tracking:** Dynamic visual progress bars to monitor project completion.
-
----
-
-## 🌍 Social Impact & Scholarship Vision
-
-This project is aligned with **UN Sustainable Development Goal #9: Industry, Innovation, and Infrastructure**. 
-
-My goal for the **MS in the US** is to further develop AI tools that empower local startups and students in developing regions. By providing an "AI Project Architect," we reduce the cost of consultancy and technical planning, making innovation accessible to everyone.
-
----
+## ✨ Key Features
+* **AI Roadmap Generation:** Automatically generates 5 technical tasks from a project description.
+* **Technical Implementation Guides:** Provides deep-dive solutions and code snippets for every task.
+* **Collaboration Portal:** Integrated discussion boards for team communication and progress monitoring.
+* **Premium UX:** A modern Glassmorphism dashboard designed for professional project environments.
 
 ## 🛠️ Tech Stack
-
-- **Backend:** Python 3.14, Django 6.0
-- **AI Intelligence:** Google Gemini 2.0 Flash API
-- **Frontend:** HTML5, CSS3 (Glassmorphism), JavaScript (ES6), Bootstrap 5
-- **Environment Management:** Python-Dotenv for secure API handling
+* **Backend:** Python / Django
+* **AI Intelligence:** Google Gemini 2.0 Flash API
+* **Frontend:** Bootstrap 5 with Custom Glassmorphism CSS
+* **Environment Management:** Python-Dotenv for secure configuration
 
 ---
-
-## ⚙️ Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/Gemini_AI_ProjectManager.git](https://github.com/your-username/Gemini_AI_ProjectManager.git)
+*Developed by Areesha M. — Optimized for US Scholarship Portfolio and Professional Internship.*
