@@ -18,7 +18,7 @@ Traditional project management requires manual task breakdown. **AI Architect** 
 * **UX/UI:** Premium **Glassmorphism Design** for an immersive, distraction-free environment.
 * **Security:** Enterprise-standard environment variable management for API safety.
 
-## 🌐 Global Vision (SDG 9)
+## Global Vision (SDG 9)
 This tool is built to democratize technical consultancy. It aligns with **UN Sustainable Development Goal #9: Industry, Innovation, and Infrastructure** by providing small startups and independent developers with high-level technical architectural guidance that was previously only accessible to large enterprises.
 
 ---
